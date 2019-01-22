@@ -1,0 +1,19 @@
+= form_for(@task) do |f|
+  div.form-group
+  = f.label :title, "標題"
+  = f.text_field :title
+  br
+  div.form-group
+  = f.label :description, "內容"
+  = f.text_field :description
+  br
+  div.form-group
+  = f.label :end_time, "結束時間"
+  = f.text_field :end_time
+  br
+  div.form-group
+  = f.label :status, "狀態"
+  = f.text_area :status
+  br
+  div.form-group
+  = f.submit
