@@ -14,8 +14,8 @@ class TasksController < ApplicationController
   end
 
   def create
-    @user = User.first
-    @task = @user.tasks.new(task_params)
+    current_user = User.first
+    @task = current_user.tasks.new(task_params)
     
     if @task.save
       redirect_to tasks_path
