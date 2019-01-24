@@ -1,0 +1,12 @@
+services:
+  - postgresql
+addons:
+  postgresql: "9.6"
+before_script:
+  - psql -c 'create database task_management_app_test;' -U postgres
+language: ruby
+rvm:
+- 2.5.1
+script:
+  - bundle exec rails db:migrate RAILS_ENV=test
+  - bundle exec rspec 
