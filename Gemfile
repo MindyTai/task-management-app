@@ -63,3 +63,12 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # PostgreSQL adapter
 gem 'pg'
+
+# Include Slim
+gem 'slim'
+
+#bootstrap-sass
+gem 'bootstrap-sass'
+
+#jquery-rails
+gem 'jquery-rails'
