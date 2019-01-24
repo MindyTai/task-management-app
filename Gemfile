@@ -76,6 +76,3 @@ gem 'bootstrap-sass'
 
 #jquery-rails
 gem 'jquery-rails'
-
-#add travis-ci
-gem 'travis'
