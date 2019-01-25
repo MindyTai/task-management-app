@@ -1,11 +1,8 @@
 en:
-  crud:
-    create_success: Successfully Added %{resource}
-    update_success: Successfully Updated
-    delete_success: Successfully Deleted
-  buttons:
-    createTask: Create New Tasks
-    edit: Edit
-    delete: Delete 
-    submit: Update
-    
+  tasks:
+    create:
+      success: Successfully Added
+    update:
+      update: Successfully Updated
+    destroy:
+      delete: Successfully Deleted

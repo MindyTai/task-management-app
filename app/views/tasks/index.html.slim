@@ -1,17 +1,17 @@
-= content_tag :h1, t('pages.index.title')
-= link_to t('buttons.createTask'), new_task_path
+= content_tag :h1, t('.pageTitle')
+= link_to t('.createTask'), new_task_path
 br
-= link_to t('pages.index.switchToEnglish'), locale: :en
+= link_to t('.switchToEnglish'), locale: :en
 br
-= link_to t('pages.index.switchToChinese'), locale: :"zh-TW"
+= link_to t('.switchToChinese'), locale: :"zh-TW"
 table.table
   thead
     tr
-      = content_tag :td, t('activerecord.attributes.task.title')
-      = content_tag :td, t('activerecord.attributes.task.description')
-      = content_tag :td, t('activerecord.attributes.task.end_time')
-      = content_tag :td, t('activerecord.attributes.task.status')
-      = content_tag :td, t('activerecord.attributes.task.deal')
+      td = t('.title')
+      td = t('.description')
+      td = t('.end_time')
+      td = t('.status')
+      td = t('.deal')
   tbody
     - @tasks.each do |task|
       tr
@@ -24,5 +24,5 @@ table.table
         td
           = task.status
         td
-          = link_to t('buttons.edit'), edit_task_path(task)
-          = link_to t('buttons.delete'), task_path(task), method: "delete", data:{ confirm: "確認刪除" }
+          = link_to t('.edit'), edit_task_path(task)
+          = link_to t('.delete'), task_path(task), method: "delete", data:{ confirm: t('.confirm') }

@@ -1,0 +1,27 @@
+zh-TW:
+  tasks:
+    index:
+      edit: 編輯
+      delete: 刪除
+      title: 標題
+      description: 內容
+      end_time: 結束時間
+      status: 狀態
+      deal: 處理
+      createTask: 新增任務
+      switchToEnglish: 英文版
+      switchToChinese: 中文版
+      pageTitle: 任務列表
+      confirm: 確認刪除
+    edit:
+      back: 回任務列表
+      pageTitle: 編輯任務
+    new:
+      pageTitle: 新增任務
+      back: 回任務列表
+    form:
+      submit: 確認送出
+      title: 標題
+      description: 內容
+      end_time: 結束時間
+      status: 狀態

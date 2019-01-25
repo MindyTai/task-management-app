@@ -12,8 +12,8 @@ RSpec.feature "CreateTasks", type: :feature do
         fill_in 'task_description', with: 'walk the dog'
         fill_in 'task_end_time', with: '2019-12-23 00:00:00 UTC'
         fill_in 'task_status', with: '0'
-        click_button(I18n.t('buttons.submit'))
-        expect(page).to have_content(I18n.t('crud.create_success', resource: Task.model_name.human.capitalize))
+        click_button('Update')
+        expect(page).to have_content('Successfully Added')
       end
     end
     
