@@ -1,0 +1,12 @@
+zh-TW:
+  pages:
+    index:
+      title: 任務列表
+      switchToEnglish: 英文版
+      switchToChinese: 中文版
+    edit:
+      title: 編輯任務
+      back: 回任務列表
+    create:
+      title: 新增任務
+      back: 回任務列表

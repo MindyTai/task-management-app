@@ -1,19 +1,17 @@
-h1
-  | 任務列表
-= link_to "新增任務", new_task_path
+= content_tag :h1, t('pages.index.title')
+= link_to t('buttons.createTask'), new_task_path
+br
+= link_to t('pages.index.switchToEnglish'), locale: :en
+br
+= link_to t('pages.index.switchToChinese'), locale: :"zh-TW"
 table.table
   thead
     tr
-      td
-        | 標題
-      td
-        | 內容
-      td
-        | 結束時間
-      td
-        | 狀態
-      td
-        | 處理
+      = content_tag :td, t('activerecord.attributes.task.title')
+      = content_tag :td, t('activerecord.attributes.task.description')
+      = content_tag :td, t('activerecord.attributes.task.end_time')
+      = content_tag :td, t('activerecord.attributes.task.status')
+      = content_tag :td, t('activerecord.attributes.task.deal')
   tbody
     - @tasks.each do |task|
       tr
@@ -26,5 +24,5 @@ table.table
         td
           = task.status
         td
-          = link_to "編輯", edit_task_path(task)
-          = link_to "刪除", task_path(task), method: "delete", data:{ confirm: "確認刪除" }
+          = link_to t('buttons.edit'), edit_task_path(task)
+          = link_to t('buttons.delete'), task_path(task), method: "delete", data:{ confirm: "確認刪除" }

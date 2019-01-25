@@ -1,3 +1,6 @@
 Rails.application.routes.draw do
-  resources :tasks
+  # scope "(:locale)", locale: /en|nl/ do
+  #   get '/:locale' => 'tasks#index'
+    resources :tasks
+  # end
 end

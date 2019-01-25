@@ -10,8 +10,8 @@ RSpec.feature "EditTasks", type: :feature do
       it '編輯任務' do 
         visit edit_task_path(task)
         fill_in 'task_title', with: '2nd task'     
-        click_button('Update Task')
-        expect(page).to have_content('資料更新成功!')
+        click_button(I18n.t('buttons.submit'))
+        expect(page).to have_content(I18n.t('crud.update_success'))
       end
     end
 
@@ -19,7 +19,7 @@ RSpec.feature "EditTasks", type: :feature do
       it '確認更新成功' do
         visit edit_task_path(task)
         fill_in 'task_title', with: '2nd task'     
-        click_button('Update Task')
+        click_button(I18n.t('buttons.submit'))
         expect(page).to have_content('2nd task')
       end
     end

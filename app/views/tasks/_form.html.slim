@@ -1,19 +1,19 @@
 = form_for(@task) do |f|
   div.form-group
-  = f.label :title, "標題"
+  = f.label :title, t('activerecord.attributes.task.title')
   = f.text_field :title
   br
   div.form-group
-  = f.label :description, "內容"
+  = f.label :description, t('activerecord.attributes.task.description')
   = f.text_field :description
   br
   div.form-group
-  = f.label :end_time, "結束時間"
+  = f.label :end_time, t('activerecord.attributes.task.end_time')
   = f.text_field :end_time
   br
   div.form-group
-  = f.label :status, "狀態"
+  = f.label :status, t('activerecord.attributes.task.status')
   = f.text_area :status
   br
   div.form-group
-  = f.submit
+  = f.submit t('buttons.submit')
