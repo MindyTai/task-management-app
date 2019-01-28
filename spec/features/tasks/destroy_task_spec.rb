@@ -12,8 +12,8 @@ RSpec.feature "DestroyTasks", type: :feature do
     context '當使用者刪除任務' do
       it '刪除任務' do
         visit tasks_path
-        click_link('刪除')
-        expect(page).to have_content('任務已刪除！')
+        click_link('Delete')
+        expect(page).to have_content('Successfully Deleted')
       end
     end
 

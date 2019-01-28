@@ -1,0 +1,27 @@
+en:
+  tasks:
+    index:
+      pageTitle: Tasks List
+      createTask: Create New Tasks
+      switchToEnglish: English Version
+      switchToChinese: Chinese Version
+      edit: Edit
+      delete: Delete
+      title: Title
+      description: Description
+      end_time: End Time
+      status: Status
+      deal: Deal
+      confirm: Deletion Confirmed
+    edit:
+      back: Back to Tasks List
+      pageTitle: Edit Task
+    new:
+      pageTitle: New Task
+      back: Back to Tasks List
+    form:
+      submit: Update
+      title: Title
+      description: Description
+      end_time: End Time
+      status: Status

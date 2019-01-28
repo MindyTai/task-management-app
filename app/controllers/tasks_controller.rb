@@ -19,7 +19,7 @@ class TasksController < ApplicationController
     
     if @task.save
       redirect_to tasks_path
-      flash[:notice] = '新增任務成功！'
+      flash[:notice] = t('.success', resource: Task.model_name.human.capitalize)
     else
       render :new
     end
@@ -28,7 +28,7 @@ class TasksController < ApplicationController
   def update
     if @task.update(task_params)
       redirect_to tasks_path 
-      flash[:success] = '資料更新成功!'
+      flash[:success] = t('.update')
     else
       render :edit
     end
@@ -37,7 +37,7 @@ class TasksController < ApplicationController
   def destroy
     @task.destroy if @task
     redirect_to tasks_path
-    flash[:danger] = '任務已刪除！'
+    flash[:danger] = t('.delete')
   end
 
   private 

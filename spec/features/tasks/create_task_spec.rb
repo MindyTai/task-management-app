@@ -12,8 +12,8 @@ RSpec.feature "CreateTasks", type: :feature do
         fill_in 'task_description', with: 'walk the dog'
         fill_in 'task_end_time', with: '2019-12-23 00:00:00 UTC'
         fill_in 'task_status', with: '0'
-        click_button('Create Task')
-        expect(page).to have_content('新增任務成功！')
+        click_button('Update')
+        expect(page).to have_content('Successfully Added')
       end
     end
     

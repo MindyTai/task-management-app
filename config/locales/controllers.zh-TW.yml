@@ -1,0 +1,8 @@
+zh-TW:
+  tasks:
+    create:
+      success: 成功新增
+    update:
+      update: 更新成功
+    destroy:
+      delete: 刪除成功

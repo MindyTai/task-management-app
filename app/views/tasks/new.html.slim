@@ -1,7 +1,6 @@
-h1
-  | 新增任務
+= content_tag :h1, t('.pageTitle')
 
 = render "form", task: @task
 
 br
-= link_to '回任務列表', tasks_path
+= link_to t('.back'), tasks_path

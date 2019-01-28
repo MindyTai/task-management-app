@@ -1,0 +1,8 @@
+en:
+  tasks:
+    create:
+      success: Successfully Added
+    update:
+      update: Successfully Updated
+    destroy:
+      delete: Successfully Deleted
