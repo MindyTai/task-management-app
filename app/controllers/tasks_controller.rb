@@ -16,10 +16,9 @@ class TasksController < ApplicationController
   def create
     current_user = User.first
     @task = current_user.tasks.new(task_params)
-    
     if @task.save
       redirect_to tasks_path
-      flash[:notice] = t('.success', resource: Task.model_name.human.capitalize)
+      flash[:success] = t('.success', resource: Task.model_name.human.capitalize)
     else
       render :new
     end

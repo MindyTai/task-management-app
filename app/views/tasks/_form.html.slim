@@ -1,10 +1,15 @@
 = form_for(@task) do |f|
+  - if @task.errors.any?
+    ul.alert.alert-success
+      - @task.errors.full_messages.each do |message|
+        li
+          = message
   div.form-group
   = f.label :title, t('.title')
   = f.text_field :title
   br
   div.form-group
-  =  f.label :description, t('.description')
+  = f.label :description, t('.description')
   = f.text_field :description
   br
   div.form-group
