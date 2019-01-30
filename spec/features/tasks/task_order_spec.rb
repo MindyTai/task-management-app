@@ -10,6 +10,11 @@ RSpec.feature "TaskOrder", type: :feature do
       visit tasks_path
       expect(page.body.index(second_task.title)).to be <= page.body.index(first_task.title)
     end
-  end
 
+    it '任務列表以結束時間排序' do
+      visit '/tasks?date=desc&locale=zh-TW'
+      click_link ('依日期升序排序')
+      expect(page.body.index(second_task.title)).to be >= page.body.index(first_task.title)
+    end
+  end
 end

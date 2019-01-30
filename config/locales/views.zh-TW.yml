@@ -11,6 +11,8 @@ zh-TW:
       createTask: 新增任務
       switchToEnglish: 英文版
       switchToChinese: 中文版
+      sortByDateAsc: 依日期升序排序
+      sortByDateDesc: 依日期降序排序
       pageTitle: 任務列表
       confirm: 確認刪除
     edit:
