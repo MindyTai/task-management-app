@@ -5,6 +5,8 @@ en:
       createTask: Create New Tasks
       switchToEnglish: English Version
       switchToChinese: Chinese Version
+      sortByDateAsc: Sort By Date(ASC)
+      sortByDateDesc: Sort By Date(DESC)
       edit: Edit
       delete: Delete
       title: Title
