@@ -3,9 +3,6 @@ class TasksController < ApplicationController
   before_action :find_task, only: [:edit, :update, :destroy]
 
   def index
-    # if params[:dateSort]
-      # @tasks = Task.order(end_time: params[:dateSort].to_sym)
-    # end
     if params[:date] 
       @tasks = Task.order(end_time: params[:date])
     else 
