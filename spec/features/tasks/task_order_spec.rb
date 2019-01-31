@@ -21,10 +21,9 @@ RSpec.feature "TaskOrder", type: :feature do
       visit tasks_path
       fill_in 'search', with: first_task.title
       select first_task.status, :from => 'status'
-      click_button 'Search'
+      click_button '搜尋'
       expect(page).to have_content('1st task')
-      page.should have_no_content('2nd task')
     end
-    
+
   end
 end
