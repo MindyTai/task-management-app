@@ -1,11 +1,16 @@
-= content_tag :h1, t('.pageTitle')
-= link_to t('.createTask'), new_task_path
+= content_tag :h1, t('.page_title')
+= link_to t('.create_task'), new_task_path
 br
-= link_to t('.switchToEnglish'), locale: :en
+= link_to t('.switch_to_english'), locale: :en
 br
-= link_to t('.switchToChinese'), locale: :"zh-TW"
+= link_to t('.switch_to_chinese'), locale: :"zh-TW"
 br
 = sort_by_date_link
+= form_tag tasks_path, method: :get do
+  = text_field_tag :search, params[:search], placeholder: "Search..."
+  = select_tag :status, options_for_select(@status)
+  = submit_tag t('.search'), name: nil
+  = link_to t('.clear'), tasks_path
 table.table
   thead
     tr

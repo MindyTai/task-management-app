@@ -3,8 +3,11 @@ class TasksController < ApplicationController
   before_action :find_task, only: [:edit, :update, :destroy]
 
   def index
+    @status = Task.statuses
     if params[:date] 
       @tasks = Task.order(end_time: params[:date])
+    elsif params[:search] && params[:status]
+      @tasks = Task.where("title LIKE? AND cast(status as text) LIKE?", "%#{params[:search]}%", "%#{params[:status]}%")
     else 
       @tasks = Task.order(created_at: :desc)
     end

@@ -4,4 +4,6 @@ class Task < ApplicationRecord
   validates :title, :description, :end_time, :status, :presence => true
   validates :title, :length => { :minimum => 2 }
   validates :title, :uniqueness => true
+
+  enum status: [:ongoing, :finished, :pending]
 end

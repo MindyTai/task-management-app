@@ -4,7 +4,7 @@ RSpec.feature "EditTasks", type: :feature do
 
   describe 'GET /tasks/1/edit' do
     let(:user){ User.create(user_name: 'Cathy', password: '', admin: '')}
-    let(:task) { user.tasks.create(title: '1st task', description: '123', end_time: 1.month.from_now, status: false) }
+    let(:task) { user.tasks.create(title: '1st task', description: '123', end_time: 1.month.from_now, status: 'ongoing') }
     
     context '當使用者編輯任務' do
       it '編輯任務' do 

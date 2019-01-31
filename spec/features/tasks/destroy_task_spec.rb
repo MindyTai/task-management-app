@@ -6,7 +6,7 @@ RSpec.feature "DestroyTasks", type: :feature do
     let(:user){ User.create(user_name: 'Cathy', password: '', admin: '')}
 
     before do
-      user.tasks.create(title: '1st task', description: '123', end_time: 1.month.from_now, status: false) 
+      user.tasks.create(title: '1st task', description: '123', end_time: 1.month.from_now, status: 'ongoing') 
     end
 
     context '當使用者刪除任務' do
