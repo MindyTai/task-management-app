@@ -4,7 +4,7 @@ class TasksController < ApplicationController
 
   def index
    
-    @tasks = Task.all
+    @tasks = Task.includes(:user)
     @status = Task.statuses
     @priority = Task.priorities
     
