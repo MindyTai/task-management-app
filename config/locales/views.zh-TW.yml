@@ -11,12 +11,13 @@ zh-TW:
       create_task: 新增任務
       switch_to_english: 英文版
       switch_to_chinese: 中文版
-      sort_by_date_asc: 依日期升序排序
-      sort_by_date_desc: 依日期降序排序
+      sort_by_date: 依日期升序/降序排序
+      sort_by_priority: 依優先順序升序/降序排序
       page_title: 任務列表
       confirm: 確認刪除
       clear: 清除
       search: 搜尋
+      priority: 優先順序
     edit:
       back: 回任務列表
       page_title: 編輯任務
