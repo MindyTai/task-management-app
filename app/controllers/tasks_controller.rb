@@ -5,11 +5,15 @@ class TasksController < ApplicationController
   def index
     @tasks = Task.all
     @status = Task.statuses
-    
-    @tasks = @tasks.order(end_time: params[:date]) if params[:date] 
+    @priority = Task.priorities
+  
+    @tasks = @tasks.order(end_time: params[:date]) if params[:date]
+    @tasks = @tasks.order(priority: params[:priorities]) if params[:priorities]
+    @tasks = @tasks.order(created_at: :desc) 
+
     @tasks = @tasks.where("title LIKE?", "%#{params[:search]}%") if params[:search]
     @tasks = @tasks.where(status: params[:status]) if params[:status]
-    @tasks = @tasks.order(created_at: :desc)
+    @tasks = @tasks.where(priority: params[:priority]) if params[:priority]
   end
 
   def new
@@ -47,7 +51,7 @@ class TasksController < ApplicationController
 
   private 
   def task_params
-    params.require(:task).permit(:title, :description, :end_time, :status)
+    params.require(:task).permit(:title, :description, :end_time, :status, :priority)
   end
 
   def find_task

@@ -21,4 +21,8 @@
   = f.select :status, options_for_select(Task.statuses.keys)  
   br
   div.form-group
+  = f.label :priority, t('.priority')
+  = f.select :priority, options_for_select(Task.priorities.keys) 
+  br
+  div.form-group
   = f.submit t('.submit')
