@@ -8,18 +8,20 @@ zh-TW:
       end_time: 結束時間
       status: 狀態
       deal: 處理
-      createTask: 新增任務
-      switchToEnglish: 英文版
-      switchToChinese: 中文版
-      sortByDateAsc: 依日期升序排序
-      sortByDateDesc: 依日期降序排序
-      pageTitle: 任務列表
+      create_task: 新增任務
+      switch_to_english: 英文版
+      switch_to_chinese: 中文版
+      sort_by_date_asc: 依日期升序排序
+      sort_by_date_desc: 依日期降序排序
+      page_title: 任務列表
       confirm: 確認刪除
+      clear: 清除
+      search: 搜尋
     edit:
       back: 回任務列表
-      pageTitle: 編輯任務
+      page_title: 編輯任務
     new:
-      pageTitle: 新增任務
+      page_title: 新增任務
       back: 回任務列表
     form:
       submit: 確認送出
