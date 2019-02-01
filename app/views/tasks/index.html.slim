@@ -41,3 +41,4 @@ table.table
         td
           = link_to t('.edit'), edit_task_path(task)
           = link_to t('.delete'), task_path(task), method: "delete", data:{ confirm: t('.confirm') }
+= paginate @tasks

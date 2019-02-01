@@ -3,13 +3,15 @@ class TasksController < ApplicationController
   before_action :find_task, only: [:edit, :update, :destroy]
 
   def index
+   
     @tasks = Task.all
     @status = Task.statuses
     @priority = Task.priorities
-  
+    
     @tasks = @tasks.order(end_time: params[:date]) if params[:date]
     @tasks = @tasks.order(priority: params[:priorities]) if params[:priorities]
-    @tasks = @tasks.order(created_at: :desc) 
+    @tasks = @tasks.order(created_at: :desc)
+    @tasks = @tasks.order(:created_at).page(params[:page]).per(10)
 
     @tasks = @tasks.where("title LIKE?", "%#{params[:search]}%") if params[:search]
     @tasks = @tasks.where(status: params[:status]) if params[:status]
