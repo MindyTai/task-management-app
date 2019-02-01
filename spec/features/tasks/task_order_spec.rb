@@ -11,10 +11,10 @@ RSpec.feature "TaskOrder", type: :feature do
       expect(page.body.index(second_task.title)).to be <= page.body.index(first_task.title)
     end
 
-    it '任務列表以結束時間排序' do
+    it '任務列表以結束時間升序/降序排序' do
       visit '/tasks?date=desc&locale=zh-TW'
-      click_link ('依日期升序/降序排序')
-      expect(page.body.index(second_task.title)).to be <= page.body.index(first_task.title)
+      click_link ('依日期升序排序')
+      expect(page.body.index(second_task.title)).to be >= page.body.index(first_task.title)
     end
 
     it '任務列表以加入的狀態查詢' do
@@ -34,8 +34,8 @@ RSpec.feature "TaskOrder", type: :feature do
 
     it '依優先順序升序/降序排序' do
       visit tasks_path
-      click_link ('依優先順序升序/降序排序')
-      expect(page.body.index(second_task.title)).to be <= page.body.index(first_task.title)
+      click_link ('依優先順序升序排序')
+      expect(page.body.index(second_task.title)).to be >= page.body.index(first_task.title)
     end
     
   end

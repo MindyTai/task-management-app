@@ -5,8 +5,10 @@ en:
       create_task: Create New Tasks
       switch_to_english: English Version
       switch_to_chinese: Chinese Version
-      sort_by_date: Sort By Date
-      sort_by_priority: Sort By Priority
+      sort_by_date_asc: Sort By Date(ASC)
+      sort_by_date_desc: Sort By Date(DESC)
+      sort_by_priority_asc: Sort By Priority(ASC)
+      sort_by_priority_desc: Sort By Priority(DESC)
       edit: Edit
       delete: Delete
       title: Title

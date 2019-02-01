@@ -5,9 +5,10 @@ br
 br
 = link_to t('.switch_to_chinese'), locale: :"zh-TW"
 br
-= sort_link(@q, :end_time, t('.sort_by_date') , default_order: :desc) 
+= sort_by_date_link
 br
-= sort_link(@q, :priority, t('.sort_by_priority') , default_order: :desc) 
+/ = sort_link(@q, :priority, t('.sort_by_priority') , default_order: :desc)
+= sort_by_priority_link
 br
 = form_tag tasks_path, method: :get do
   = text_field_tag :search, params[:search], placeholder: "Search..."
