@@ -14,6 +14,9 @@ gem 'slim'
 gem 'bootstrap-sass'
 #jquery-rails
 gem 'jquery-rails'
+#kaminari
+gem 'kaminari', :git => 'https://github.com/kaminari/kaminari'
+
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
