@@ -1,10 +1,10 @@
 class TasksController < ApplicationController
 
   before_action :find_task, only: [:edit, :update, :destroy]
+  before_action :authorize
 
   def index
-   
-    @tasks = Task.includes(:user)
+    @tasks = Task.includes(:user).where(user_id: session[:user_id])
     @status = Task.statuses
     @priority = Task.priorities
     
@@ -26,8 +26,9 @@ class TasksController < ApplicationController
   end
 
   def create
-    current_user = User.first
+    current_user = User.find_by_id(session[:user_id])
     @task = current_user.tasks.new(task_params)
+    
     if @task.save
       redirect_to tasks_path
       flash[:success] = t('.success', resource: Task.model_name.human.capitalize)
@@ -38,7 +39,7 @@ class TasksController < ApplicationController
 
   def update
     if @task.update(task_params)
-      redirect_to tasks_path 
+      redirect_to tasks_path
       flash[:success] = t('.update')
     else
       render :edit
@@ -57,7 +58,14 @@ class TasksController < ApplicationController
   end
 
   def find_task
-    @task = Task.find_by(id: params[:id])
+    current_user = User.find_by_id(session[:user_id])
+    @task = current_user.tasks.find_by(id: params[:id])
   end
 
+  def authorize
+    unless User.find_by(id: session[:user_id])
+      redirect_to login_path, notice: "Please log in"
+    end
+  end
+  
 end
