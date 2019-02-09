@@ -11,4 +11,9 @@ Rails.application.routes.draw do
   controller :admin do
     get 'adminshow' => :admin_show
   end
+
+  controller :errors do
+    get "*path" => :not_found
+  end
+
 end
