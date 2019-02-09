@@ -4,7 +4,11 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_by(user_name: params[:name])
-    if user and user.authenticate(params[:password])
+    # user = User.find_by(admin: true)
+    if user && user.admin && user.authenticate(params[:password])
+      session[:user_id] = user.id
+      redirect_to admin_index_path
+    elsif user && (user.admin == false) && user.authenticate(params[:password])
       session[:user_id] = user.id
       redirect_to tasks_path
     else
@@ -21,8 +25,14 @@ class SessionsController < ApplicationController
   end
 
   def signup
-    User.create(user_name: params[:name], password: params[:password], password_confirmation: params[:password])
-    redirect_to login_path
+    @flag = params[:flag]
+    if @flag 
+      User.create(user_name: params[:name], password: params[:password], password_confirmation: params[:password], admin: params[:flag])
+    else
+      User.create(user_name: params[:name], password: params[:password], password_confirmation: params[:password], admin: false)
+    end
+    
+    redirect_to login_path, notice: "Successfully signed up"
   end
 
 end

@@ -6,5 +6,9 @@ Rails.application.routes.draw do
     get 'signup' => :signup_index
     post 'signup' => :signup
   end
-  resources :tasks 
+  resources :tasks
+  resources :admin
+  controller :admin do
+    get 'adminshow' => :admin_show
+  end
 end

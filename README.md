@@ -7,7 +7,7 @@ attr_name | attr_type | default | index | desc
 id        | integer   |         |       |會員編號
 user_name | string    |         |       | 名稱
 password  | string    |         |       | 密碼
-is_admin  | boolean   |  false  |       | 是否為管理員
+admin  | boolean   |  false  |       | 是否為管理員
 
 - Task
 
