@@ -25,8 +25,7 @@ class SessionsController < ApplicationController
   end
 
   def signup
-    @flag = params[:flag]
-    if @flag 
+    if params[:flag]
       User.create(user_name: params[:name], password: params[:password], password_confirmation: params[:password], admin: params[:flag])
     else
       User.create(user_name: params[:name], password: params[:password], password_confirmation: params[:password], admin: false)

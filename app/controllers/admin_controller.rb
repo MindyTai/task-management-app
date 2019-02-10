@@ -5,27 +5,27 @@ class AdminController < ApplicationController
   end
 
   def create
-    @flag = params[:flag]
-    if @flag 
-      @user = User.new(user_name: params[:user][:user_name], password: params[:user][:password], password_confirmation: params[:password], admin: params[:flag])
+    if params[:flag]
+      @user = User.new(user_name: params[:user][:user_name], password: params[:user][:password], password_confirmation: params[:user][:password], admin: params[:flag])
     else
-      @user = User.new(user_name: params[:user][:user_name], password: params[:user][:password], password_confirmation: params[:password], admin: false)
+      @user = User.new(user_name: params[:user][:user_name], password: params[:user][:password], password_confirmation: params[:user][:password], admin: false)
     end
-   
+
     if @user.save
       redirect_to admin_index_path
       flash[:success] = 'User has Successfully Added'
     else
       render :new
     end 
+
   end
 
   def destroy
-    if User.where(:admin => true).count > 1
+    if User.where(:admin => true).size > 1
       @user = User.find(params[:id])
       @user.destroy if @user
       redirect_to admin_index_path
-      flash[:danger] = 'User has been deleted'
+      flash[:danger] = 'Admin has been deleted'
     else
       redirect_to adminshow_path
       flash[:danger] = 'Cannot delete the last admin'
@@ -38,13 +38,14 @@ class AdminController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    @flag = params[:flag]
-    if @flag
+    if params[:flag]
       @user = @user.update(user_name: params[:user][:user_name], password: params[:user][:password], password_confirmation: params[:password], admin: params[:flag])
       redirect_to admin_index_path
       flash[:success] = 'Successfully Updated'
-    else
-      render :edit
+    else 
+      @user = @user.update(user_name: params[:user][:user_name], password: params[:user][:password], password_confirmation: params[:password], admin: false)
+      redirect_to admin_index_path
+      flash[:success] = 'Successfully Updated'
     end
   end
 

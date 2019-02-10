@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   end
 
   controller :errors do
-    get "*path" => :not_found
+    get "*path" => :index
   end
 
 end

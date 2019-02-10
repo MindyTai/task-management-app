@@ -1,8 +1,7 @@
 class ErrorsController < ApplicationController
-  def not_found
+  def index
     respond_to do |format|
-      format.html { render template: 'errors/not_found_error', layout: 'layouts/application', status: 404 }
-      format.all  { render nothing: true, status: 404 }
+      format.html { render template: 'errors/errors', status: 404 }
     end
   end
 
