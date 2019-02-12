@@ -12,6 +12,13 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require chosen
+$(document).on('ready page:load', function () {
+  $('#task_tag_ids').chosen({
+    allow_single_deselect: true,
+    width: '100%'
+  })
+})
 //= require popper
 //= require tether
 //= require bootstrap-sprockets

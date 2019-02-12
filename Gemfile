@@ -25,6 +25,7 @@ gem 'popper_js'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether'
+  gem 'rails-assets-chosen'
 end
 
 gem 'puma', '~> 3.11'
