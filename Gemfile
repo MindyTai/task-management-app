@@ -19,7 +19,7 @@ gem 'kaminari', :git => 'https://github.com/kaminari/kaminari'
 
 gem 'simple_form'
 
-gem 'bootstrap'
+gem 'bootstrap', git: 'https://github.com/twbs/bootstrap-rubygem'
 
 gem 'popper_js'
 

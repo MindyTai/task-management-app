@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
+  root :to => 'sessions#index'
+  
   controller :sessions do
-    get 'login' => :index
-    post 'login' => :create
+    post '/' => :create
     delete 'logout' => :destroy
     get 'signup' => :signup_index
     post 'signup' => :signup
