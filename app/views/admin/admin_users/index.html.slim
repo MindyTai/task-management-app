@@ -15,9 +15,9 @@ table.table
         td
           = user.tasks.count
         td
-          = link_to 'edit', edit_admin_path(user)
+          = link_to 'edit', edit_admin_admin_user_path(user)
           br
-          = link_to 'delete', admin_path(user), method: "delete"
+          = link_to 'delete', admin_admin_user_path(user), method: "delete"
           br
-          = link_to 'view', admin_path(user)
-= link_to 'Back', admin_index_path
+          = link_to 'view',  admin_admin_user_path(user)
+= link_to 'Back To Users List', admin_users_path

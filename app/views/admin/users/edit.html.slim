@@ -1,6 +1,6 @@
 = content_tag :h1, 'Update User'
 
-= form_for @user,url: admin_path, :method => :PATCH do |f|
+= form_for @user,url: admin_user_path, :method => :PATCH do |f|
  
   div.form-group
   = f.label :user_name, 'Name'
@@ -16,4 +16,4 @@
   = f.submit 'submit'
 
 br
-= link_to 'back', admin_index_path
+= link_to 'back', admin_users_path

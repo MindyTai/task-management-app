@@ -1,5 +1,4 @@
-class AdminController < ApplicationController
-
+class Admin::UsersController < ApplicationController
   def index
     @users = User.where(admin: false)
   end
@@ -12,24 +11,12 @@ class AdminController < ApplicationController
     end
 
     if @user.save
-      redirect_to admin_index_path
+      redirect_to admin_users_path
       flash[:success] = 'User has Successfully Added'
     else
       render :new
-    end 
-
-  end
-
-  def destroy
-    if User.where(:admin => true).size > 1
-      @user = User.find(params[:id])
-      @user.destroy if @user
-      redirect_to admin_index_path
-      flash[:danger] = 'Admin has been deleted'
-    else
-      redirect_to adminshow_path
-      flash[:danger] = 'Cannot delete the last admin'
     end
+
   end
 
   def new
@@ -40,11 +27,11 @@ class AdminController < ApplicationController
     @user = User.find(params[:id])
     if params[:flag]
       @user = @user.update(user_name: params[:user][:user_name], password: params[:user][:password], password_confirmation: params[:password], admin: params[:flag])
-      redirect_to admin_index_path
+      redirect_to admin_users_path
       flash[:success] = 'Successfully Updated'
     else 
       @user = @user.update(user_name: params[:user][:user_name], password: params[:user][:password], password_confirmation: params[:password], admin: false)
-      redirect_to admin_index_path
+      redirect_to admin_users_path
       flash[:success] = 'Successfully Updated'
     end
   end
@@ -57,17 +44,11 @@ class AdminController < ApplicationController
     @user = User.find(params[:id])
   end
 
-  def admin_show
-    @users = User.where(admin: true)
-  end
-
-  private 
-  def user_params
-    params.permit(:password, :user_name, :admin)
-  end
-
-  def task_params
-    params.permit(:title, :description, :end_time, :status, :priority)
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy if @user
+    redirect_to admin_users_path
+    flash[:danger] = 'User has been deleted.'
   end
 
 end
