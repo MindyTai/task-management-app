@@ -7,7 +7,7 @@ RSpec.feature "CreateTasks", type: :feature do
 
     context '當使用者新增任務' do
       it '新增任務' do
-        visit '/login?locale=zh-TW'
+        visit '/'
         fill_in 'name', with: 'Cathy'
         fill_in 'password', with: '111'
         click_button 'Log In'
@@ -22,7 +22,7 @@ RSpec.feature "CreateTasks", type: :feature do
       end
 
       it'確認新增任務'do
-        visit '/login?locale=zh-TW'
+        visit '/'
         fill_in 'name', with: 'Cathy'
         fill_in 'password', with: '111'
         click_button 'Log In'

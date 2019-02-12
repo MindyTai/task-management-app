@@ -7,7 +7,7 @@ RSpec.feature "TaskOrder", type: :feature do
 
   describe 'GET /tasks' do
     it '任務列表以建立時間排序' do
-      visit '/login?locale=zh-TW'
+      visit '/'
       fill_in 'name', with: 'Kat'
       fill_in 'password', with: '111'
       click_button 'Log In'
@@ -16,7 +16,7 @@ RSpec.feature "TaskOrder", type: :feature do
     end
 
     it '任務列表以結束時間升序/降序排序' do
-      visit '/login?locale=zh-TW'
+      visit '/'
       fill_in 'name', with: 'Kat'
       fill_in 'password', with: '111'
       click_button 'Log In'
@@ -26,7 +26,7 @@ RSpec.feature "TaskOrder", type: :feature do
     end
 
     it '任務列表以加入的狀態查詢' do
-      visit '/login?locale=zh-TW'
+      visit '/'
       fill_in 'name', with: 'Kat'
       fill_in 'password', with: '111'
       click_button 'Log In'
@@ -38,7 +38,7 @@ RSpec.feature "TaskOrder", type: :feature do
     end
 
     it '任務列表以加入的優先順序查詢' do
-      visit '/login?locale=zh-TW'
+      visit '/'
       fill_in 'name', with: 'Kat'
       fill_in 'password', with: '111'
       click_button 'Log In'
@@ -49,7 +49,7 @@ RSpec.feature "TaskOrder", type: :feature do
     end
 
     it '依優先順序升序/降序排序' do
-      visit '/login?locale=zh-TW'
+      visit '/'
       fill_in 'name', with: 'Kat'
       fill_in 'password', with: '111'
       click_button 'Log In'

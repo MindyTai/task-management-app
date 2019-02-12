@@ -11,7 +11,7 @@ RSpec.feature "DestroyTasks", type: :feature do
 
     context '當使用者刪除任務' do
       it '刪除任務' do
-        visit '/login?locale=zh-TW'
+        visit '/'
         fill_in 'name', with: 'Cathy'
         fill_in 'password', with: '111'
         click_button 'Log In'
