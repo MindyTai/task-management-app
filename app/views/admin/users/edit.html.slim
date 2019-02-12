@@ -1,0 +1,19 @@
+= content_tag :h1, 'Update User'
+
+= form_for @user,url: admin_user_path, :method => :PATCH do |f|
+ 
+  div.form-group
+  = f.label :user_name, 'Name'
+  = f.text_field :user_name
+  br
+  div.form-group
+  = f.label :password, 'Password'
+  = f.text_field :password
+  br
+  = check_box_tag 'flag', true, :flag
+  | Admin
+  div.form-group
+  = f.submit 'submit'
+
+br
+= link_to 'back', admin_users_path

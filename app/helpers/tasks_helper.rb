@@ -10,5 +10,5 @@ module TasksHelper
     prioritySort = params[:priorities] == 'asc' ? 'desc' : 'asc' 
     link_to title, priorities: prioritySort
   end
-  
+
 end

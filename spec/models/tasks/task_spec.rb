@@ -2,10 +2,10 @@ require 'rails_helper'
 
 RSpec.describe Task, type: :model do
 
-  let(:user){ User.create(user_name: 'Cathy', password: '', admin: '') }
-  let(:first_task) { user.tasks.create(title: '1st task', description: '123', end_time: 1.month.from_now, status: 'ongoing') }
-  let(:second_task) { user.tasks.create(title: '', description:'', end_time: '', status: '') }
-  let(:third_task) { user.tasks.create(title: '1st task', description: '123', end_time: 1.month.from_now, status: 'ongoing') }
+  let(:user){ User.create(user_name: 'Cathy', password: '111', admin: false) }
+  let(:first_task) { user.tasks.create(title: '1st task', description: '123', end_time: 1.month.from_now, status: 'ongoing', priority: 'low') }
+  let(:second_task) { user.tasks.create(title: '', description:'111', end_time: '', status: '', priority: 'low') }
+  let(:third_task) { user.tasks.create(title: '1st task', description: '123', end_time: 1.month.from_now, status: 'ongoing', priority: '') }
   let(:status) { [:ongoing, :finished, :pending] }
   
   it 'is acessible' do

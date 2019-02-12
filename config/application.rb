@@ -18,5 +18,7 @@ module TaskManagementApp
     # config.i18n.default_locale = :zh-TW
     config.i18n.available_locales = %i[en zh-TW]
     config.time_zone = 'Taipei'
+
+    config.exceptions_app = self.routes
   end
 end
