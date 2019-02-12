@@ -17,6 +17,16 @@ gem 'jquery-rails'
 #kaminari
 gem 'kaminari', :git => 'https://github.com/kaminari/kaminari'
 
+gem 'simple_form'
+
+gem 'bootstrap'
+
+gem 'popper_js'
+
+source 'https://rails-assets.org' do
+  gem 'rails-assets-tether'
+end
+
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'

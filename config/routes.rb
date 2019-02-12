@@ -7,9 +7,14 @@ Rails.application.routes.draw do
     post 'signup' => :signup
   end
   resources :tasks
-  resources :admin
-  controller :admin do
-    get 'adminshow' => :admin_show
+  
+  controller :tasks do
+    get 'tags/:tag_ids' => :show, as: :tag_ids
+  end
+
+  namespace :admin do
+    resources :admin_users
+    resources :users
   end
 
   controller :errors do

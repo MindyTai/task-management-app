@@ -1,0 +1,14 @@
+h1
+  | Tasks
+.col-md-8.offset-2
+  - @tasks.each do |task|
+    h2
+      = task.title
+    p
+      = task.description
+    p
+      small
+        | Tags: 
+        = raw task.tags.map(&:name).map { |t| link_to t, tag_ids_path(t) }.join(', ')
+
+= link_to "Back to Tasks List", tasks_path 

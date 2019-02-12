@@ -16,7 +16,7 @@ RSpec.feature "CreateTasks", type: :feature do
         fill_in 'task_title', with: '1st task'
         fill_in 'task_description', with: 'walk the dog'
         fill_in 'task_end_time', with: '2019-12-23 00:00:00 UTC'
-        expect(page).to have_select('task_status', :options => ['ongoing', 'pending', 'finished'])
+        expect(page).to have_select('task_status', :options => ['','ongoing', 'pending', 'finished'])
         select 'ongoing', :from => 'task_status'
         click_button('確認送出')
       end
