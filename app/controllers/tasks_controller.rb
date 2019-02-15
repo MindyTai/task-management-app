@@ -52,9 +52,14 @@ class TasksController < ApplicationController
     flash[:danger] = t('.delete')
   end
 
+  def show
+    @tasks = Task.includes(:user).where(user_id: session[:user_id])
+    @tasks = @tasks.tagged_with(params[:tag_ids]) if params[:tag_ids].present?
+  end
+
   private 
   def task_params
-    params.require(:task).permit(:title, :description, :end_time, :status, :priority)
+    params.require(:task).permit(:title, :description, :end_time, :status, :priority, tag_ids: [])
   end
 
   def find_task

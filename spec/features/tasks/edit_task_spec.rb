@@ -8,7 +8,7 @@ RSpec.feature "EditTasks", type: :feature do
     
     context '當使用者編輯任務' do
       it '編輯任務' do 
-        visit '/login?locale=zh-TW'
+        visit '/'
         fill_in 'name', with: 'Cathy'
         fill_in 'password', with: '111'
         click_button 'Log In'
@@ -22,7 +22,7 @@ RSpec.feature "EditTasks", type: :feature do
 
     context '檢查是否更新成功' do
       it '確認更新成功' do
-        visit '/login?locale=zh-TW'
+        visit '/'
         fill_in 'name', with: 'Cathy'
         fill_in 'password', with: '111'
         click_button 'Log In'

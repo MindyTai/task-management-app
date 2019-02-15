@@ -1,5 +1,7 @@
 class Task < ApplicationRecord
   belongs_to :user
+  has_many :taggings ,dependent: :destroy
+  has_many :tags, through: :taggings ,dependent: :destroy
 
   validates :title, :description, :end_time, :status, :priority, :presence => true
   validates :title, :length => { :minimum => 2 }
@@ -15,5 +17,10 @@ class Task < ApplicationRecord
     medium: 1,
     high: 2
   }
+
+
+  def self.tagged_with(name)
+    Tag.find_by(name: name).tasks
+  end
 
 end

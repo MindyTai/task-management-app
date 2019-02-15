@@ -7,7 +7,7 @@ RSpec.feature "CreateTasks", type: :feature do
 
     context '當使用者新增任務' do
       it '新增任務' do
-        visit '/login?locale=zh-TW'
+        visit '/'
         fill_in 'name', with: 'Cathy'
         fill_in 'password', with: '111'
         click_button 'Log In'
@@ -16,13 +16,13 @@ RSpec.feature "CreateTasks", type: :feature do
         fill_in 'task_title', with: '1st task'
         fill_in 'task_description', with: 'walk the dog'
         fill_in 'task_end_time', with: '2019-12-23 00:00:00 UTC'
-        expect(page).to have_select('task_status', :options => ['ongoing', 'pending', 'finished'])
+        expect(page).to have_select('task_status', :options => ['','ongoing', 'pending', 'finished'])
         select 'ongoing', :from => 'task_status'
         click_button('確認送出')
       end
 
       it'確認新增任務'do
-        visit '/login?locale=zh-TW'
+        visit '/'
         fill_in 'name', with: 'Cathy'
         fill_in 'password', with: '111'
         click_button 'Log In'

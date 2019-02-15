@@ -1,28 +1,10 @@
-= form_for(@task) do |f|
-  - if @task.errors.any?
-    ul.alert.alert-success
-      - @task.errors.full_messages.each do |message|
-        li
-          = message
-  div.form-group
-  = f.label :title, t('.title')
-  = f.text_field :title
-  br
-  div.form-group
-  = f.label :description, t('.description')
-  = f.text_field :description
-  br
-  div.form-group
-  = f.label :end_time, t('.end_time')
-  = f.text_field :end_time
-  br
-  div.form-group
-  = f.label :status, t('.status')
-  = f.select :status, options_for_select(Task.statuses.keys)  
-  br
-  div.form-group
-  = f.label :priority, t('.priority')
-  = f.select :priority, options_for_select(Task.priorities.keys) 
-  br
-  div.form-group
-  = f.submit t('.submit')
+.col-md-8.offset-2
+  h1.text-center
+  = simple_form_for @task do |f|
+    = f.input :title
+    = f.input :description
+    = f.input :end_time, as: :date, html5: true
+    = f.input :status, priority: ['ongoing'], collection: ['ongoing','pending','finished']
+    = f.input :priority, priority: ['low'], collection:['low','medium','high']
+    = f.input :tag_ids, as: :select, collection: Tag.order(:name), label_method: :name, input_html: {multiple: true}
+    = f.submit "確認送出", class: 'btn btn-lg btn-primary float-right'
