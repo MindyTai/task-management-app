@@ -20,7 +20,7 @@ class Task < ApplicationRecord
 
 
   def self.tagged_with(name)
-    Tag.find_by!(name: name).tasks
+    Tag.find_by(name: name).tasks
   end
 
 end

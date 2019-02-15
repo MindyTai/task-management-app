@@ -53,12 +53,13 @@ class TasksController < ApplicationController
   end
 
   def show
-    params[:tag_ids] ? @tasks = Task.includes(:user).where(user_id: session[:user_id]).tagged_with(params[:tag_ids]) : @tasks = Task.includes(:user).where(user_id: session[:user_id])
+    @tasks = Task.includes(:user).where(user_id: session[:user_id])
+    @tasks = @tasks.tagged_with(params[:tag_ids]) if params[:tag_ids].present?
   end
 
   private 
   def task_params
-    params.require(:task).permit(:title, :description, :end_time, :status, :priority, { tag_ids: [] })
+    params.require(:task).permit(:title, :description, :end_time, :status, :priority, tag_ids: [])
   end
 
   def find_task

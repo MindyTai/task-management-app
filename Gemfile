@@ -28,6 +28,8 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-chosen'
 end
 
+gem 'hirb-unicode'
+
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
